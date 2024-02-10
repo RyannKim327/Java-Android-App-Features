@@ -9,6 +9,7 @@ public class Login extends RelativeLayout {
 		super(cx, attr);
 		ctx = cx;
 	}
+
 	void init(){
 		
 	}
