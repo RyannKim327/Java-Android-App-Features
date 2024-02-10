@@ -26,6 +26,8 @@ public class BaseLayout extends RelativeLayout {
 			@Override
 			public void run() {
 				drop_layout();
+				Login login = new Login(ctx);
+				addView(login);
 			}
 		}, 500);
 	}
