@@ -1,10 +1,14 @@
 package mpop.revii.layout;
 import android.content.Context;
-import android.util.AttributeSet;
-import android.widget.RelativeLayout;
-import android.widget.LinearLayout;
-import android.os.Handler;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RoundRectShape;
+import android.os.Handler;
+import android.util.AttributeSet;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 public class Login extends RelativeLayout {
 	Context ctx;
@@ -22,34 +26,37 @@ public class Login extends RelativeLayout {
 
 	void init(){
 		sp = ctx.getSharedPreferences("mpop.revii.login", ctx.MODE_PRIVATE);
-		LinearLayout form = new LinearLayout(ctx);
+		final LinearLayout form = new LinearLayout(ctx);
 		EditText password = new EditText(ctx);
 		float d = 5f;
 		float e = 25f;
 		ShapeDrawable draw = new ShapeDrawable(new RoundRectShape(new float[]{
 			d, d, d, d,
 			d, d, d, d
-		}, null, null))
+		}, null, null));
 		ShapeDrawable pass = new ShapeDrawable(new RoundRectShape(new float[]{
 			e, e, e, e,
 			e, e, e, e
-		}, null, null))
+		}, null, null));
 
-		draw.getPaint().setColor(Color.parse("#333333"));
-		pass.getPaint().setColor(Color.parse("#eeeeee"));
+		draw.getPaint().setColor(Color.parseColor("#333333"));
+		pass.getPaint().setColor(Color.parseColor("#eeeeee"));
 
 		form.setOrientation(LinearLayout.VERTICAL);
 		form.setBackgroundDrawable(draw);
 
 		password.setPadding(5, 3, 5, 3);
-		pass.setBackgroundDrawable(pass);
+		password.setBackgroundDrawable(pass);
 
-		form.addView(pass);
+		form.addView(password);
 
 		if(!sp.getString("mpop.revii.login.USER_PASSWORD", "").isEmpty()){
 			new Handler().postDelayed(new Runnable(){
-				addView(form);
-			}, 500)
+				@Override
+				public void run(){
+					addView(form);
+				}
+			}, 500);
 		}
 	}
 }
