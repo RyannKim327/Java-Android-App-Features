@@ -4,120 +4,126 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<mpop.revii.layout.Background
+	<mpop.revii.layout.Login
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
 
-		<mpop.revii.downloader.Downloader
-			android:layout_height="match_parent"
-			android:layout_width="match_parent"/>
+		<mpop.revii.layout.Background
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
 
-		<LinearLayout
-			android:orientation="vertical"
-			android:layout_height="match_parent"
-			android:layout_width="match_parent">
+			<mpop.revii.downloader.Downloader
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"/>
 
-			<ScrollView
-				android:layout_weight="1.0"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content">
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_height="match_parent"
+				android:layout_width="match_parent">
 
-				<mpop.revii.widget.Toggles
-					android:layout_height="match_parent"
-					android:layout_width="match_parent"
-					android:orientation="vertical">
-
-					<TextView
-						android:gravity="center"
-						android:textSize="19sp"
-						android:text="---Menu---"
-						android:textColor="#ffffff"
-						android:layout_width="fill_parent"
-						android:layout_height="wrap_content"/>
-
-					<Switch
-						android:text="test"
-						android:layout_width="fill_parent"
-						android:layout_height="wrap_content"/>
-
-					<Switch
-						android:text="Second Layout"
-						android:layout_width="fill_parent"
-						android:layout_height="wrap_content"/>
-
-					<Switch
-						android:text="Test Layout"
-						android:layout_width="fill_parent"
-						android:layout_height="wrap_content"/>
-
-				</mpop.revii.widget.Toggles>
-
-			</ScrollView>
-
-			<RelativeLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_weight="1.0">
-
-				<mpop.revii.widget.Container
-					android:background="#ff00ff"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent">
-
-					<TextView
-						android:visibility="gone"
-						android:text="test"
-						android:layout_width="0.0dip"
-						android:layout_height="0.0dip"/>
-
-					<TextView
-						android:text="test result"
-						android:layout_width="fill_parent"
-						android:layout_height="wrap_content"/>
-
-				</mpop.revii.widget.Container>
-
-				<mpop.revii.widget.Container
-					android:background="#ff0000"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent">
-
-					<TextView
-						android:visibility="gone"
-						android:text="Second Layout"
-						android:layout_width="0.0dip"
-						android:layout_height="0.0dip"/>
-
-					<TextView
-						android:textColor="#ffffff"
-						android:text="test result"
-						android:layout_width="fill_parent"
-						android:layout_height="wrap_content"/>
-
-				</mpop.revii.widget.Container>
-
-				<mpop.revii.widget.Container
-					android:background="#ff0000"
-					android:layout_width="wrap_content"
+				<ScrollView
+					android:layout_weight="1.0"
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content">
 
-				</mpop.revii.widget.Container>
+					<mpop.revii.widget.Toggles
+						android:layout_height="match_parent"
+						android:layout_width="match_parent"
+						android:orientation="vertical">
 
-			</RelativeLayout>
+						<TextView
+							android:gravity="center"
+							android:textSize="19sp"
+							android:text="---Menu---"
+							android:textColor="#ffffff"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"/>
 
-		</LinearLayout>
+						<Switch
+							android:text="test"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"/>
 
-		<mpop.revii.widget.Tester
-			android:alpha="0.2"
-			android:layout_height="match_parent"
-			android:layout_width="match_parent"
-			android:background="#ff0000"/>
+						<Switch
+							android:text="Second Layout"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"/>
 
-		<mpop.revii.widget.KenBurnViewMod
-			android:background="#0000ff"
-			android:layout_width="match_parent"
-			android:layout_height="100dp"/>
+						<Switch
+							android:text="Test Layout"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"/>
 
-	</mpop.revii.layout.Background>
+					</mpop.revii.widget.Toggles>
+
+				</ScrollView>
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1.0">
+
+					<mpop.revii.widget.Container
+						android:background="#ff00ff"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<TextView
+							android:visibility="gone"
+							android:text="test"
+							android:layout_width="0.0dip"
+							android:layout_height="0.0dip"/>
+
+						<TextView
+							android:text="test result"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"/>
+
+					</mpop.revii.widget.Container>
+
+					<mpop.revii.widget.Container
+						android:background="#ff0000"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<TextView
+							android:visibility="gone"
+							android:text="Second Layout"
+							android:layout_width="0.0dip"
+							android:layout_height="0.0dip"/>
+
+						<TextView
+							android:textColor="#ffffff"
+							android:text="test result"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"/>
+
+					</mpop.revii.widget.Container>
+
+					<mpop.revii.widget.Container
+						android:background="#ff0000"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content">
+
+					</mpop.revii.widget.Container>
+
+				</RelativeLayout>
+
+			</LinearLayout>
+
+			<mpop.revii.widget.Tester
+				android:alpha="0.2"
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:background="#ff0000"/>
+
+			<mpop.revii.widget.KenBurnViewMod
+				android:background="#0000ff"
+				android:layout_width="match_parent"
+				android:layout_height="100dp"/>
+
+		</mpop.revii.layout.Background>
+	
+	</mpop.revii.layout.Login>
 
 </mpop.revii.layout.BaseLayout>
