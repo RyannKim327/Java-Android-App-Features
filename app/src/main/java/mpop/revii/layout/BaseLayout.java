@@ -35,14 +35,20 @@ public class BaseLayout extends RelativeLayout {
 		RelativeLayout b = new RelativeLayout(ctx);
 		
 		FileChooser file = new FileChooser(ctx);
+		LoginSetup setup = new LoginSetup(ctx);
+
 		ShapeDrawable d = new ShapeDrawable(new RoundRectShape(new float[]{
 			15, 15, 15, 15,
 			0, 0, 0, 0
 		}, null, null));
 		d.getPaint().setColor(Color.parseColor("#dedede"));
+		
 		file.setBackgroundDrawable(d);
+		setup.setBackgroundDrawable(d);
+
 		b.setPadding(0, 250, 0, 0);
 		
+		b.addView(setup);
 		b.addView(file);
 		addView(b);
 	}
