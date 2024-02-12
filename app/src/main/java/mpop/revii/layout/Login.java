@@ -2,13 +2,18 @@ package mpop.revii.layout;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class Login extends RelativeLayout {
 	Context ctx;
@@ -26,7 +31,7 @@ public class Login extends RelativeLayout {
 
 	void init(){
 		sp = ctx.getSharedPreferences("mpop.revii.login", ctx.MODE_PRIVATE);
-		final RelativcLayout base = new RelativcLayout(ctx);
+		final RelativeLayout base = new RelativeLayout(ctx);
 		final LinearLayout form = new LinearLayout(ctx);
 		TextView title = new TextView(ctx);
 		EditText password = new EditText(ctx);
@@ -49,7 +54,7 @@ public class Login extends RelativeLayout {
 		form.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT ));
 		form.setOrientation(LinearLayout.VERTICAL);
 		form.setBackgroundDrawable(draw);
-		form.setaPadding(8, 10, 8, 5);
+		form.setPadding(8, 10, 8, 5);
 		
 		base.setOnClickListener(new OnClickListener(){
 			@Override

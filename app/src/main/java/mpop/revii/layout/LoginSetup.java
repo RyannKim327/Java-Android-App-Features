@@ -1,6 +1,14 @@
 package mpop.revii.layout;
 
-public class LoginSetup extends LinearLayout{
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.Gravity;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.text.method.PasswordTransformationMethod;
+
+public class LoginSetup extends LinearLayout {
 	Context ctx;
 	public LoginSetup(Context c){
 		super(c);
@@ -22,20 +30,20 @@ public class LoginSetup extends LinearLayout{
 		setOrientation(LinearLayout.VERTICAL);
 
 		password.setSingleLine();
-		password.setTransformMethod(new PasswordTransformMethod());
+		password.setTransformationMethod(new PasswordTransformationMethod());
 		password.setHint("Enter your password here");
 		password.setGravity(Gravity.CENTER);
 		
 		confirm.setSingleLine();
-		confirm.setTransformMethod(new PasswordTransformMethod());
+		confirm.setTransformationMethod(new PasswordTransformationMethod());
 		confirm.setHint("Confirm your current password to proceed");
 		confirm.setGravity(Gravity.CENTER);
 		
-		send.setText("Make changes")
+		send.setText("Make changes");
 		send.setGravity(Gravity.CENTER);
 
-		base.addView(password);
-		base.addView(confirm);
-		base.addView(send);
+		addView(password);
+		addView(confirm);
+		addView(send);
 	}
 }
