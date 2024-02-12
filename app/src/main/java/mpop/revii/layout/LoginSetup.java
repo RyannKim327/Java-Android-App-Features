@@ -24,12 +24,16 @@ public class LoginSetup extends LinearLayout{
 		password.setSingleLine();
 		password.setTransformMethod(new PasswordTransformMethod());
 		password.setHint("Enter your password here");
-		
+		password.setGravity(Gravity.CENTER);
 		
 		confirm.setSingleLine();
-		password.setTransformMethod(new PasswordTransformMethod());
+		confirm.setTransformMethod(new PasswordTransformMethod());
 		confirm.setHint("Confirm your current password to proceed");
+		confirm.setGravity(Gravity.CENTER);
 		
+		send.setText("Make changes")
+		send.setGravity(Gravity.CENTER);
+
 		base.addView(password);
 		base.addView(confirm);
 		base.addView(send);

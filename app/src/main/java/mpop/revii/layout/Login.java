@@ -26,7 +26,9 @@ public class Login extends RelativeLayout {
 
 	void init(){
 		sp = ctx.getSharedPreferences("mpop.revii.login", ctx.MODE_PRIVATE);
+		final RelativcLayout base = new RelativcLayout(ctx);
 		final LinearLayout form = new LinearLayout(ctx);
+		TextView title = new TextView(ctx);
 		EditText password = new EditText(ctx);
 		float d = 5f;
 		float e = 25f;
@@ -39,22 +41,39 @@ public class Login extends RelativeLayout {
 			e, e, e, e
 		}, null, null));
 
+		base.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT ));
+		
 		draw.getPaint().setColor(Color.parseColor("#333333"));
 		pass.getPaint().setColor(Color.parseColor("#eeeeee"));
-
+		
+		form.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT ));
 		form.setOrientation(LinearLayout.VERTICAL);
 		form.setBackgroundDrawable(draw);
+		form.setaPadding(8, 10, 8, 5);
+		
+		base.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+
+			}
+		});
+
+		title.setText(sp.getString("mpop.revii.login.HINT", "Enter your password here"));
+		title.setTextSize(25);
+		title.setTypeface(Typeface.SERIF);
+		title.setTextColor(Color.parseColor("#ffffff"));
 
 		password.setPadding(5, 3, 5, 3);
 		password.setBackgroundDrawable(pass);
 
+		form.addView(title);
 		form.addView(password);
-
+		base.addView(form);
 		if(!sp.getString("mpop.revii.login.USER_PASSWORD", "").isEmpty()){
 			new Handler().postDelayed(new Runnable(){
 				@Override
 				public void run(){
-					addView(form);
+					addView(base);
 				}
 			}, 500);
 		}
