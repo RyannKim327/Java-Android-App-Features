@@ -57,5 +57,4 @@ public class Container extends FrameLayout{
 			}
 		}
 	}
-	
 }
