@@ -13,5 +13,7 @@ public class MainActivity extends Activity {
 		setTheme(android.R.style.Theme_Material_NoActionBar);
 		// setContentView(R.layout.activity_main);
 		setContentView(new Webview(this));
+		// checkSelfPermission(
+		// requestPermissions(
 	}
 }

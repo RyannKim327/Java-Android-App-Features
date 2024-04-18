@@ -1,8 +1,12 @@
 package mpop.revii.layout;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -21,6 +25,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import mpop.revii.utils.index;
+import android.Manifest;
+import mpop.revii.MainActivity;
 
 public class Webview extends LinearLayout {
 	Context ctx;
@@ -232,6 +238,9 @@ public class Webview extends LinearLayout {
 				if(web.canGoBack()){
 					web.goBack();
 				}
+				if(web.getUrl().contains("facebook.com") && web.getUrl().contains("/messages/")){
+					web.goBack();
+				}
 			}
 		});
 		
@@ -273,6 +282,7 @@ public class Webview extends LinearLayout {
 		addView(load);
 		addView(web);
 		addView(nav);
+		checkPermission(ctx, Manifest.permission.WRITE_EXTERNAL_STORAGE, 1);
 	}
 	
 	void go(){
@@ -285,6 +295,14 @@ public class Webview extends LinearLayout {
 			web.loadUrl(String.format("https://www.google.com/search?q=%s", link));
 		}else{
 			web.loadUrl(String.format("https://%s", link));
+		}
+	}
+	void checkPermission(Context a, String permission, int reqCode){
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+			ContextWrapper wrap = new ContextWrapper(a);
+			if(wrap.checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED){
+				
+			}
 		}
 	}
 }
